@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/housesAdsFragment">
+
+    <fragment
+        android:id="@+id/housesAdsFragment"
+        android:name="com.mramallo.houseadstt.ui.housesAds.HousesAdsFragment"
+        android:label="fragment_housesAds"
+        tools:layout="@layout/fragment_houses_ads">
+        <action
+            android:id="@+id/action_housesAdsFragment_to_houseAdDetailFragment"
+            app:destination="@id/houseAdDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/houseAdDetailFragment"
+        android:name="com.mramallo.houseadstt.ui.houseAdDetail.HouseAdDetailFragment"
+        android:label="fragment_houseAdDetail"
+        tools:layout="@layout/fragment_house_ad_detail" />
+
+</navigation>

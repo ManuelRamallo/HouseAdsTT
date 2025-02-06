@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.mramallo.houseadstt.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mramallo.houseadstt.databinding.FragmentHousesAdsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,4 +27,14 @@ class HousesAdsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
+
+    private fun setupRecyclerViewAndObservers(){
+        val manager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        binding.rvHouses.layoutManager = manager
+
+        // TODO - CONTINUE HERE
+    }
+
+
 }

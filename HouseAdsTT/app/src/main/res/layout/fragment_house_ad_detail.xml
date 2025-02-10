@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.houseAdDetail.HouseAdDetailFragment">
+    tools:context=".ui.houseAdDetail.HouseAdDetailFragment"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
 
-</FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_image_house"
+            android:layout_width="match_parent"
+            android:layout_height="331dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_property_type_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="property Type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_image_house" />
+
+        <TextView
+            android:id="@+id/tv_state_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="state"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_image_house" />
+
+        <TextView
+            android:id="@+id/tv_status_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text="status"
+            app:layout_constraintStart_toEndOf="@+id/tv_property_type_house"
+            app:layout_constraintTop_toTopOf="@+id/tv_property_type_house" />
+
+        <TextView
+            android:id="@+id/tv_community_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="costs community"
+            app:layout_constraintStart_toStartOf="@+id/tv_property_type_house"
+            app:layout_constraintTop_toBottomOf="@+id/tv_property_type_house" />
+
+        <TextView
+            android:id="@+id/tv_rooms_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="rooms"
+            app:layout_constraintStart_toEndOf="@+id/tv_community_house"
+            app:layout_constraintTop_toTopOf="@+id/tv_community_house" />
+
+        <TextView
+            android:id="@+id/tv_bathrooms_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="bathrooms"
+            app:layout_constraintStart_toEndOf="@+id/tv_rooms_house"
+            app:layout_constraintTop_toTopOf="@+id/tv_community_house" />
+
+        <TextView
+            android:id="@+id/tv_floors_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="floors"
+            app:layout_constraintStart_toEndOf="@+id/tv_energy_house"
+            app:layout_constraintTop_toTopOf="@+id/tv_energy_house" />
+
+        <TextView
+            android:id="@+id/tv_energy_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="energy certification"
+            app:layout_constraintStart_toStartOf="@+id/tv_community_house"
+            app:layout_constraintTop_toBottomOf="@+id/tv_community_house" />
+
+        <TextView
+            android:id="@+id/tv_description_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="description"
+            app:layout_constraintStart_toStartOf="@+id/tv_energy_house"
+            app:layout_constraintTop_toBottomOf="@+id/tv_energy_house" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

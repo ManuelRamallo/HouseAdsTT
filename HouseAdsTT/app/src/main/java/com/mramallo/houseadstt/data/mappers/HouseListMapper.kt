@@ -2,25 +2,22 @@ package com.mramallo.houseadstt.data.mappers
 
 import com.mramallo.houseadstt.data.remote.dto.FeaturesDto
 import com.mramallo.houseadstt.data.remote.dto.HouseItemDto
-import com.mramallo.houseadstt.data.remote.dto.HousesListDto
 import com.mramallo.houseadstt.data.remote.dto.ImageDto
 import com.mramallo.houseadstt.data.remote.dto.MultimediaDto
 import com.mramallo.houseadstt.data.remote.dto.PriceDto
 import com.mramallo.houseadstt.data.remote.dto.PriceInfoDto
 import com.mramallo.houseadstt.domain.entity.Features
 import com.mramallo.houseadstt.domain.entity.HouseItem
-import com.mramallo.houseadstt.domain.entity.HousesList
 import com.mramallo.houseadstt.domain.entity.Image
 import com.mramallo.houseadstt.domain.entity.Multimedia
 import com.mramallo.houseadstt.domain.entity.Price
 import com.mramallo.houseadstt.domain.entity.PriceInfo
 
-// TODO - COMPLETE THIS
-fun HousesListDto.toHousesList(): HousesList {
-    return HousesList(
-        houseItem = houseItem?.map { it.toHouseItem() } ?: listOf()
-    )
+
+fun List<HouseItemDto>.toHousesList(): List<HouseItem> {
+    return this.map { it.toHouseItem() }
 }
+
 
 fun HouseItemDto.toHouseItem(): HouseItem {
     return HouseItem(

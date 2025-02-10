@@ -77,8 +77,7 @@ dependencies {
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
 
-    /*implementation(libs.glide)
-    implementation(libs.glide.compiler)*/
+    implementation(libs.coil)
 
     implementation(libs.timber)
 

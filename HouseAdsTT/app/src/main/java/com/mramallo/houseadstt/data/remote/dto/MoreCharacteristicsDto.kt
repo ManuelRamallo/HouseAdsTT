@@ -9,7 +9,7 @@ data class MoreCharacteristicsDto(
     val agencyIsABank: Boolean?,
     val energyCertificationType: String?,
     val flatLocation: String?,
-    val modificationDate: Int?,
+    val modificationDate: Double?,
     val constructedArea: Int?,
     val lift: Boolean?,
     val boxroom:  Boolean?,

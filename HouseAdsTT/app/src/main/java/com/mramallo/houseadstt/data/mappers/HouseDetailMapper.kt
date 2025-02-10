@@ -51,7 +51,7 @@ fun MoreCharacteristicsDto.toMoreCharacteristics(): MoreCharacteristics {
         agencyIsABank = agencyIsABank ?: false,
         energyCertificationType = energyCertificationType ?: "",
         flatLocation = flatLocation ?: "",
-        modificationDate = modificationDate ?: 0,
+        modificationDate = modificationDate ?: 0.0,
         constructedArea = constructedArea ?: 0,
         lift = lift ?: false,
         boxroom = boxroom ?: false,

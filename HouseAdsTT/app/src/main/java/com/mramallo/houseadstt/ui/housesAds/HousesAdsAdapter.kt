@@ -36,7 +36,7 @@ class HousesAdsAdapter(
         fun render(houseItem: HouseItem, onClickItemListener: () -> Unit) {
             // Image, title and price
             binding.ivImageHouse.load(houseItem.thumbnail)
-            binding.tvTitleHouse.text = if(houseItem.operation == "rent") "En alquiler" else "En venta"
+            binding.tvTitleHouse.text = if(houseItem.operation == "rent") "For rent" else "For sale"
             binding.tvPriceHouse.text = "${houseItem.priceInfo.price.amount.formatPrice()} ${houseItem.priceInfo.price.currencySuffix}"
 
             // Location
@@ -47,8 +47,8 @@ class HousesAdsAdapter(
             } + ", " + houseItem.municipality
 
             // Features
-            binding.tvRoomsHouse.text = houseItem.rooms.toString() + " Habitaciones"
-            binding.tvBathroomsHouse.text = houseItem.bathrooms.toString() + " Baños"
+            binding.tvRoomsHouse.text = houseItem.rooms.toString() + " Rooms"
+            binding.tvBathroomsHouse.text = houseItem.bathrooms.toString() + " Bathrooms"
             binding.tvSizeHouse.text = houseItem.size.toString() + " m²"
 
 

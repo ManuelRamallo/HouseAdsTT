@@ -5,8 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.mramallo.houseadstt.R
 import com.mramallo.houseadstt.databinding.ItemHouseListBinding
 import com.mramallo.houseadstt.domain.entity.HouseItem
+import com.mramallo.houseadstt.utils.convertMillisToDate
 import com.mramallo.houseadstt.utils.formatPrice
 import java.util.Locale
 
@@ -53,6 +55,25 @@ class HousesAdsAdapter(
 
 
             itemView.setOnClickListener { onClickItemListener() }
+            setFavoriteHouse(binding)
+
         }
+    }
+}
+
+fun setFavoriteHouse(binding: ItemHouseListBinding){
+    var isFavorite = false
+    var dateFavorite = ""
+
+    binding.imageButton.setOnClickListener {
+        isFavorite = !isFavorite
+        binding.imageButton.setImageResource(if (isFavorite) R.drawable.star_on else R.drawable.start_off)
+        dateFavorite = if (isFavorite) {
+            System.currentTimeMillis().convertMillisToDate()
+        } else {
+            ""
+        }
+        binding.tvDateFavorite.visibility = if (isFavorite) View.VISIBLE else View.GONE
+        binding.tvDateFavorite.text = dateFavorite
     }
 }

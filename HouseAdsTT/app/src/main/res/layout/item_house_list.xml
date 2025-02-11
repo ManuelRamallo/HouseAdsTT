@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="10dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -68,15 +68,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_title_house"
                 tools:text="Lugar donde se encuentra la casa" />
 
+
             <TextView
                 android:id="@+id/tv_rooms_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_location_house"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_location_house"
                 tools:text="Feature 1" />
 
@@ -88,7 +90,7 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/tv_rooms_house"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="@+id/tv_rooms_house"
                 tools:text="Feature 2" />
 
@@ -100,9 +102,36 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/tv_bathrooms_house"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/tv_bathrooms_house"
                 tools:text="Feature 3" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@+id/tv_rooms_house"
+                app:layout_constraintTop_toTopOf="@+id/tv_rooms_house"
+                app:srcCompat="@drawable/bath" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/tv_location_house"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location_house"
+                app:srcCompat="@drawable/rooms" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@+id/tv_bathrooms_house"
+                app:layout_constraintTop_toTopOf="@+id/tv_bathrooms_house"
+                app:srcCompat="@drawable/size" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

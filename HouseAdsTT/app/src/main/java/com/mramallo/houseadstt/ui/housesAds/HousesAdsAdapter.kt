@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.mramallo.houseadstt.databinding.ItemHouseListBinding
 import com.mramallo.houseadstt.domain.entity.HouseItem
+import com.mramallo.houseadstt.utils.formatPrice
+import java.util.Locale
 
 class HousesAdsAdapter(
     private val housesList: List<HouseItem>,
@@ -32,13 +34,22 @@ class HousesAdsAdapter(
         private val binding = ItemHouseListBinding.bind(view)
 
         fun render(houseItem: HouseItem, onClickItemListener: () -> Unit) {
+            // Image, title and price
             binding.ivImageHouse.load(houseItem.thumbnail)
-            binding.tvTitleHouse.text = if(houseItem.operation == "rent") "Alquiler" else "Venta"
-            binding.tvPriceHouse.text = "${houseItem.priceInfo.price.amount} ${houseItem.priceInfo.price.currencySuffix}"
-            binding.tvLocationHouse.text = houseItem.address + ", " + houseItem.municipality
-            binding.tvRoomsHouse.text = houseItem.rooms.toString()
-            binding.tvBathroomsHouse.text = houseItem.bathrooms.toString()
-            binding.tvSizeHouse.text = houseItem.size.toString() + " m2"
+            binding.tvTitleHouse.text = if(houseItem.operation == "rent") "En alquiler" else "En venta"
+            binding.tvPriceHouse.text = "${houseItem.priceInfo.price.amount.formatPrice()} ${houseItem.priceInfo.price.currencySuffix}"
+
+            // Location
+            binding.tvLocationHouse.text = houseItem.address.replaceFirstChar {
+                if (it.isLowerCase()) it.titlecase(
+                    Locale.ROOT
+                ) else it.toString()
+            } + ", " + houseItem.municipality
+
+            // Features
+            binding.tvRoomsHouse.text = houseItem.rooms.toString() + " Habitaciones"
+            binding.tvBathroomsHouse.text = houseItem.bathrooms.toString() + " Baños"
+            binding.tvSizeHouse.text = houseItem.size.toString() + " m²"
 
 
             itemView.setOnClickListener { onClickItemListener() }

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.dagger.hilt.android.plugin)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -40,6 +41,11 @@ android {
 
     buildFeatures {
         viewBinding = true
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
 }
 
@@ -82,6 +88,7 @@ dependencies {
     implementation(libs.timber)
 
     implementation(libs.compose)
+    implementation(libs.androidx.material3.android)
 
     implementation(libs.multidex)
 

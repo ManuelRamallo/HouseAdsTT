@@ -6,8 +6,9 @@ data class Multimedia(
     companion object {
         fun getMock() = Multimedia(
             images = listOf(
-                Image.getEmpty(),
-                Image.getEmpty()
+                Image.getMock(),
+                Image.getMock(),
+                Image.getMock()
             )
         )
 

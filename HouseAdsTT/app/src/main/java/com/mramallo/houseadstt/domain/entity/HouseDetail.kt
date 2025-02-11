@@ -15,4 +15,25 @@ data class HouseDetail(
     val country: String,
     val moreCharacteristics: MoreCharacteristics,
     val energyCertification: EnergyCertification,
-)
+) {
+    companion object {
+        fun getMock(): HouseDetail {
+            return HouseDetail(
+                adid = 1,
+                price = 1195000f,
+                priceInfo = PriceInfo.getMock(),
+                operation = "sale",
+                propertyType = "flat",
+                extendedPropertyType = "flat",
+                homeType = "flat",
+                state = "state",
+                multimedia = Multimedia.getMock(),
+                propertyComment = "propertyComment",
+                ubication = Ubication.getMock(),
+                country = "country",
+                moreCharacteristics = MoreCharacteristics.getMock(),
+                energyCertification = EnergyCertification.getMock(),
+            )
+        }
+    }
+}

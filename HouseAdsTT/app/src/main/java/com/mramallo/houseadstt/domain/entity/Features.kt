@@ -7,7 +7,7 @@ data class Features(
     companion object {
         fun getMock() = Features(
             hasAirConditioning = true,
-            hasBoxRoom = true
+            hasBoxRoom = false
         )
         fun getEmpty() = Features(
             hasAirConditioning = false,

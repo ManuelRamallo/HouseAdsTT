@@ -6,6 +6,11 @@ data class EnergyCertification(
     val emissions: Emissions,
 ) {
     companion object {
+        fun getMock(): EnergyCertification = EnergyCertification(
+            title = "ertificado energético",
+            energyConsumption = EnergyConsumption.getMock(),
+            emissions = Emissions.getMock()
+        )
         fun getEmpty(): EnergyCertification = EnergyCertification(
             title = "",
             energyConsumption = EnergyConsumption.getEmpty(),

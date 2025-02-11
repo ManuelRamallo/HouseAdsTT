@@ -94,6 +94,8 @@ dependencies {
 
     implementation(libs.annotations)
 
+    testImplementation(libs.mockk)
+    testImplementation(libs.coreTesting)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

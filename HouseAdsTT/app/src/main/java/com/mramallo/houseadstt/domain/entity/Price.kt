@@ -6,7 +6,7 @@ data class Price(
 ) {
     companion object {
         fun getMock() = Price(
-            amount = 1F,
+            amount = 1195000F,
             currencySuffix = "€"
         )
         fun getEmpty() = Price(
